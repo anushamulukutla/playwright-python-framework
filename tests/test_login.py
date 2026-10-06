@@ -22,3 +22,14 @@ class TestLogin:
         expect(error).to_contain_text("Sorry, this user has been locked out")
 
         screenshot.take_screenshot(page, "locked_out_user_error")
+
+    def test_login_with_problem_user(self, page):
+        login_page = LoginPage(page)
+        page.goto(BASE_URL)
+        login_page.login("problem_user", "secret_sauce")
+
+        # Wait for the page to load and check if the URL is correct
+        time.sleep(2)
+        assert page.url == f"{BASE_URL}/inventory.html"
+        screenshot.take_screenshot(page, "Problem_userlogin")
+
