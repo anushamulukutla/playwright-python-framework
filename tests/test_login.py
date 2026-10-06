@@ -29,7 +29,7 @@ class TestLogin:
         login_page.login("problem_user", "secret_sauce")
 
         # Wait for the page to load and check if the URL is correct
-        time.sleep(2)
+    
         assert page.url == f"{BASE_URL}/inventory.html"
         screenshot.take_screenshot(page, "Problem_userlogin")
 
