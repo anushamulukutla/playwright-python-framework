@@ -1,13 +1,16 @@
 from playwright.sync_api import Page
-from locators.locators_login import Login_locators
+from locators.locators import Locators
 
 
 class LoginPage:
+
     def __init__(self, page: Page):
+
         self.page = page
-        self.username = Login_locators.username
-        self.password = Login_locators.password
-        self.login_button = Login_locators.login_button
+
+        self.username = Locators.username
+        self.password = Locators.password
+        self.login_button = Locators.login_button
 
     def login(self, username, password):
         self.page.fill(f'input[name="{self.username}"]', username)

@@ -1,4 +1,4 @@
-class Login_locators:
+class Locators:
     username = "user-name"
     password = "password"
     login_button = "login-button"

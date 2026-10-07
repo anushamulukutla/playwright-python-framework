@@ -4,4 +4,3 @@ STANDARD_PASSWORD = "secret_sauce"
 
 LOCKED_OUT_USER = "locked_out_user"
 PROBLEM_USER = "problem_user"
-
