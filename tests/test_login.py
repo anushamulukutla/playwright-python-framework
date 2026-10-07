@@ -1,7 +1,7 @@
 import time
 import pytest
-from playwright.sync_api import expect
-
+# from playwright.sync_api import expect
+from playwright.async_api import Page
 from pages.login_page import LoginPage
 from test_data.users import BASE_URL, STANDARD_USER, STANDARD_PASSWORD
 from utils.screenshots import screenshot

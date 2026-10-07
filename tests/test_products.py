@@ -1,11 +1,18 @@
+import pytest
+
+
+@pytest.mark.asyncio
 class TestProducts:
-    def test_add_sauce_labs_backpack_to_cart(self, login):
+
+    async def test_add_sauce_labs_backpack_to_cart(self, login):
         products_page = login
 
-        products_page.add_sauce_labs_backpack_to_cart()
+        await products_page.add_sauce_labs_backpack_to_cart()
 
-        assert products_page.page.get_by_role(
+        assert await products_page.page.get_by_role(
             "button", name="Remove"
         ).is_visible()
 
-        products_page.open_cart()
+        await products_page.open_cart()
+
+        await products_page.page.wait_for_timeout(3000)
