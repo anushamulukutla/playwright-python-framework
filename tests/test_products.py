@@ -14,5 +14,3 @@ class TestProducts:
         ).is_visible()
 
         await products_page.open_cart()
-
-        await products_page.page.wait_for_timeout(3000)
