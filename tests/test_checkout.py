@@ -1,3 +1,5 @@
+import time
+
 import pytest
 import test_data.products as products
 
@@ -34,12 +36,11 @@ class TestCheckout:
         await checkout_page.click_continue()
 
         # Step 6: Verify Checkout Overview page
-        assert await products_page.page.get_by_text(
-            "Checkout: Overview"
-        ).is_visible()
+        await products_page.page.get_by_text("Checkout: Overview").wait_for(state="visible")
 
         # Step 7: Finish checkout
         await checkout_page.click_finish()
+        time.sleep(2)
 
         # Step 8: Verify successful order
         assert await products_page.page.get_by_text(
