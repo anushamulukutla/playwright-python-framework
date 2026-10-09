@@ -34,9 +34,10 @@ class TestCheckout:
         await checkout_page.click_continue()
 
         # Step 6: Verify Checkout Overview page
-        assert await products_page.page.get_by_text(
-            "Checkout: Overview"
-        ).is_visible()
+        # assert await products_page.page.get_by_text(
+        #     "Checkout: Overview"
+        # ).is_visible()
+        await products_page.page.get_by_text("Checkout: Overview").wait_for(state="visible")
 
         # Step 7: Finish checkout
         await checkout_page.click_finish()
