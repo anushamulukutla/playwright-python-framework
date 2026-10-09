@@ -37,7 +37,6 @@ class TestCheckout:
 
         # Step 6: Verify Checkout Overview page
         await products_page.page.get_by_text("Checkout: Overview").wait_for(state="visible")
-
         # Step 7: Finish checkout
         await checkout_page.click_finish()
         time.sleep(2)
